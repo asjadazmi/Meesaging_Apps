@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/hello")
 public class HelloWorldController {
 
-    @GetMapping("/query")
-    public String sayHello(@RequestParam String name){
-        return "hello from "+name;
-}
 
-
+    @GetMapping("/web/{firstName}/{lastName}")
+    public String sayHello(@PathVariable String firstName,@PathVariable String lastName){
+        return "my  name is"+firstName+lastName;
+    }
 
 
 }
