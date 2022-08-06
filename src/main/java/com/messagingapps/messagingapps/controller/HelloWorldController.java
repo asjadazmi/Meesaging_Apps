@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/hello")
 public class HelloWorldController {
-@PostMapping("/web")
-public String creatingRequestBody(@RequestBody Student student){
-    return "my name is "+student.getFirstName()+" "+student.getLastName();
+@PutMapping("/put/{firstName}")
+public String creatingRequestBody(@PathVariable String firstName,@RequestParam String lastName){
+    return "my name is "+firstName+" "+lastName;
+
 }
 
 }
